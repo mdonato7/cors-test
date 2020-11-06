@@ -6,15 +6,25 @@
   crossorigin="anonymous"></script>
   </head>
 <body>
+Url: <input type="text" id="url" /></br/>
+Method: <input type="text" id="method" /></br/>
+Authorization: <input type="text" id="auth" /></br/>
 <a id="clickme" href="#">click me</a>
+<!--
+<iframe src="http://mdonato.eng.data3sixty.local/swagger/ui/index" referrerpolicy="origin" width="80%" height="80%"></iframe>
+<iframe src="http://mdonato.eng.data3sixty.local" referrerpolicy="origin" width="80%" height="80%"></iframe>
+-->
 <script>
 $('#clickme').click(function() {
+var url = $('#url').value;
+var method = $('#method').value;
+var auth = $('#auth').value;
 $.ajax({
-	url: 'https://qa.eng.data3sixty.com/api/v2/assets/classes',
-	method: 'GET',
+	url: url,
+	method: method,
 	crossDomain: true,
 	headers: {
-		Authorization: 'H$b2QyMlJjgVeaQLbkN8bfdhb;UUNF7EUZXfrDoDl7yvzrfxF6adlUr4VlmSpHpJ2VGN1m-LNisU',
+		Authorization: auth,
 	}
 });
 });
